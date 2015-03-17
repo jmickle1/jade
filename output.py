@@ -1,6 +1,7 @@
-import PIL
-import omg
-print("output.py")
+try:
+	import omg
+except:
+	pass
 
 def to_image(tilemap):
 	data = tilemap.data

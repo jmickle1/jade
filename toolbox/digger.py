@@ -1,7 +1,5 @@
 import random
 
-print("digger.py")
-
 def dig(tilemap,tile,x,y,decay = 0,max=20):
 	ch = random.choice([1,2,3,4])
 	while (max >= 0):

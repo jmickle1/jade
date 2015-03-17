@@ -1,5 +1,3 @@
-print("draw.py")
-
 def rect(tilemap,tile,x,y,w,h,fill = 0):
 	if (fill == 0):
 		for i in range(x,x+w):

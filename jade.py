@@ -1,13 +1,9 @@
 from tilemap import *
 import output
-import toolbox.digger
+import scripts.default
+import omg
 
 til = Tilemap(30,20)
-
 print (til.get_size())
-
-toolbox.digger.dig(til,"#",15,10)
-toolbox.digger.dig(til,"#",15,10)
-toolbox.digger.dig(til,"#",15,10)
-
+scripts.default.run(til)
 output.to_print(til)
