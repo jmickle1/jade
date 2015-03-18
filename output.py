@@ -1,8 +1,6 @@
 import util
-try:
-	import omg
-except:
-	pass
+import omg
+import omg.mapedit
 
 def to_image(tilemap):
 	data = tilemap.data
@@ -13,15 +11,12 @@ def to_image(tilemap):
 def to_map(tilemap):
 	#convert all tiles to square sectors
 	sectors = []
+	map = omg.mapedit.MapEditor()
 	for i in range(tilemap.width):
 		for j in range(tilemap.height):
 			if (tilemap.get_tile(i,j) != ""):
-				sectors.append([(i*32,j*32),((i*32)+32,j*32),((i*32)+32,(j*32)+32),(i*32,(j*32)+32)])
-				
-	map = omg.mapedit.MapEditor()
-	
-	for s in sectors:
-		map.draw_sector(s)
+				sec = tilemap.tileinfo[tilemap.get_tile(i,j)].to_sector()
+				map.draw_sector([(i*32,j*32),((i*32)+32,j*32),((i*32)+32,(j*32)+32),(i*32,(j*32)+32)],sec)
 	
 	return map.to_lumps()
 	
