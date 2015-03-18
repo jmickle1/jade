@@ -9,6 +9,4 @@ class Brush(object):
 		self.z_ceil = z_ceil
 		self.light = light
 		self.sector = omg.mapedit.Sector(self.z_floor,self.z_ceil,self.floor,self.ceil,self.light)
-		
-	def to_sector(self):
-		return self.sector
+		self.sidedef = omg.mapedit.Sidedef(0,0,"-","-",texture)

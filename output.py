@@ -16,8 +16,9 @@ def to_map(tilemap):
 	for i in range(tilemap.width):
 		for j in range(tilemap.height):
 			if (tilemap.get_tile(i,j) != ""):
-				sec = tilemap.tileinfo[tilemap.get_tile(i,j)].to_sector()
-				map.draw_sector([(i*32,j*32),((i*32)+32,j*32),((i*32)+32,(j*32)+32),(i*32,(j*32)+32)],sec)
+				sec = tilemap.tileinfo[tilemap.get_tile(i,j)].sector
+				sid = tilemap.tileinfo[tilemap.get_tile(i,j)].sidedef
+				map.draw_sector([(i*32,j*32),((i*32)+32,j*32),((i*32)+32,(j*32)+32),(i*32,(j*32)+32)],sec,sid)
 				
 	print("output.py to_map(), cleaning up sectors")
 	combined = 0
