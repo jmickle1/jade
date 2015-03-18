@@ -1,8 +1,12 @@
 import random
 import toolbox.draw
 import toolbox.digger
+import brush
 
 def run(tilemap):
+	tilemap.set_tile_brush(".",brush.Brush("FWATER1","F_SKY1","STONE6"))
+	tilemap.set_tile_brush("+",brush.Brush("RROCK17","F_SKY1","STONE6"))
+	tilemap.set_tile_brush("#",brush.Brush("SLIME14","F_SKY1","METAL2"))
 	toolbox.draw.circle(tilemap,".",random.randint(0,30),random.randint(0,20),random.randint(3,8))
 	toolbox.draw.circle(tilemap,".",random.randint(0,30),random.randint(0,20),random.randint(3,8))
 	toolbox.draw.circle(tilemap,".",random.randint(0,30),random.randint(0,20),random.randint(3,8))
