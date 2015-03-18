@@ -16,7 +16,7 @@ def to_map(tilemap):
 	for i in range(tilemap.width):
 		for j in range(tilemap.height):
 			if (tilemap.get_tile(i,j) != ""):
-				sectors.append([(i,j),(i+32,j),(i+32,j+32),(i,j+32)])
+				sectors.append([(i*32,j*32),((i*32)+32,j*32),((i*32)+32,(j*32)+32),(i*32,(j*32)+32)])
 				
 	map = omg.mapedit.MapEditor()
 	
