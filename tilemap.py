@@ -1,3 +1,4 @@
+import brush
 import omg.util
 
 class Tilemap(object):
@@ -11,21 +12,17 @@ class Tilemap(object):
 		try:
 			self.tileinfo[tile]
 		except:
-			print("you fucked up")
-			self.set_tile_sector(tile,(0,128,"BLOOD1","F_SKY1",160))
+			print("Tile "+tile+" has no Brush, creating default")
+			self.set_tile_brush(tile,brush.Brush())
 		if (x >= 0 and y >= 0 and x < self.width and y < self.height):
 			self.data[x][y] = tile
-		else:
-			print("tilemap.py trying to set out of bounds")
 	
 	def get_tile(self,x,y):
 		if (x >= 0 and y >= 0 and x < self.width and y < self.height):
 			return self.data[x][y]
-		else:
-			print("tilemap.py trying to read out of bounds")
 		
 	def get_size(self):
 		return (self.width,self.height)
 	
-	def set_tile_sector(self,tile,sector):
-		self.tileinfo[tile] = sector
+	def set_tile_brush(self,tile,brush):
+		self.tileinfo[tile] = brush
