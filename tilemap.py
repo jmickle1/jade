@@ -7,6 +7,7 @@ class Tilemap(object):
 		self.height = height
 		self.data = [["" for y in range(height)] for x in range(width)]
 		self.tileinfo = omg.util.OrderedDict()
+		self.things = []
 	
 	def set_tile(self,x,y,tile):
 		try:

@@ -1,7 +1,7 @@
 import random
 import math
 
-def dig(tilemap,tile,x,y,decay = 0,max=20,thick=1):
+def dig(tilemap,tile,x,y,decay = 0,max=20,thick=1,turnchance=0.2):
 	ch = random.choice([1,2,3,4])
 	while (max >= 0):
 		if (thick!=1):
@@ -10,7 +10,7 @@ def dig(tilemap,tile,x,y,decay = 0,max=20,thick=1):
 					tilemap.set_tile(a,b,tile)
 		else:
 			tilemap.set_tile(x,y,tile)
-		if (random.random()<0.5): 
+		if (random.random()<turnchance): 
 			ch += random.choice([1,-1])
 			if (ch>4): ch=0
 			if (ch<0): ch=4

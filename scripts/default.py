@@ -20,4 +20,5 @@ def run(tilemap):
 	w = random.randint(5,15)
 	h = random.randint(4,10)
 	toolbox.draw.rect(tilemap,"#",x,y,w,h,1)
+	
 	#toolbox.draw.rect(tilemap,"",x-1,y-1,w+2,h+2,0)
