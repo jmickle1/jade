@@ -1,13 +1,18 @@
 from tilemap import *
 import output
-import scripts.default
+import scripts.cavey
 import omg
 
-til = Tilemap(30,20)
-print (til.get_size())
-scripts.default.run(til)
-output.to_print(til)
+print("-------------")
+print("jade")
+print("   by jmickle")
+print("-------------")
+print("")
+print("")
 
-wad = omg.WAD()
-wad.maps["MAP01"] = output.to_map(til)
-wad.to_file("C:/Users/JMickle/Dropbox/Projects/Python/shit.wad")
+til = Tilemap(80,60)
+print ("map size: "+str(til.get_size()))
+scripts.cavey.run(til)
+#output.to_print(til)
+
+output.to_file(til,"C:/Users/JMickle/Documents/shit.wad")
