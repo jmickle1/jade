@@ -6,8 +6,8 @@
 
 texture alignment
 fill out doom things table
-more scripts
-more tools
+more scripts/script ideas
+more tools/tool ideas -- this will probably come off the back of the new scripts
 
 ** features **
 
@@ -29,6 +29,9 @@ hudface generator
 font generator
 frontend editor
 manual editor
+r667/afterglow texture pack grabber
+r667 font grabber
+r667 bestiary grabber
 
 ** done **
 
