@@ -4,8 +4,10 @@ import brush
 import omg.mapedit
 import thingplace
 from doomthings import *
+from tilemap import *
 
-def run(tilemap):
+def run():
+	tilemap = Tilemap(80,60)
 	tilemap.set_tile_brush("A",brush.Brush(random_rock_flat(),random_rock_flat(),random_rock_texture(),random.choice([0,16,32,48]),random.choice([0,16,32,48])+96,random.choice([0,16,32,48])+128))
 	tilemap.set_tile_brush("B",brush.Brush(random_rock_flat(),random_rock_flat(),random_rock_texture(),random.choice([0,16,32,48]),random.choice([0,16,32,48])+96,random.choice([0,16,32,48])+128))
 	tilemap.set_tile_brush("C",brush.Brush(random_rock_flat(),random_rock_flat(),random_rock_texture(),random.choice([0,16,32,48]),random.choice([0,16,32,48])+96,random.choice([0,16,32,48])+128))
@@ -19,6 +21,7 @@ def run(tilemap):
 	tilemap.things.append(omg.mapedit.Thing(50*32,50*32,0,PLAYER1))
 	thingplace.add_to_tile_type(tilemap,"A",0.1,[ZOMBIEMAN,SHOTGUN_GUY,IMP,STIMPACK,AMMO_CLIP,SHELLS])
 	thingplace.add_to_tile_type(tilemap,"B",0.1,[ZOMBIEMAN,SHOTGUN_GUY,IMP,STIMPACK,AMMO_CLIP,SHELLS])
+	return tilemap
 	
 def random_rock_flat():
 	return random.choice(["FLAT1_1"])

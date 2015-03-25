@@ -31,3 +31,12 @@ class Tilemap(object):
 	def set_tile_brush(self,tile,brush):
 		self.tileindex.append(tile)
 		self.tileinfo[tile] = brush
+		
+	def paste_tilemap(self, til, offset, paste_blanks = False):
+		for i in range(0,len(til.width)):
+			for j in range(0,len(til.height)):
+				if (til.get_tile(i,j) == ""):
+					if (paste_blanks):
+						self.set_tile(i,j,tile.get_tile(i,j))
+				else:
+					self.set_tile(i,j,tile.get_tile(i,j))

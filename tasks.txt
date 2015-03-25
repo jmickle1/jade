@@ -4,16 +4,14 @@
 
 ** improvements **
 
-move canvas size to scripts
 texture alignment
 fill out doom things table
 more scripts
 more tools
-commandline argument for output
 
 ** features **
 
-merging tilemaps
+config file for settings
 linedef actions
 unit tests
 mapinfo support
@@ -29,7 +27,12 @@ dehacked support
 stbar generator
 hudface generator
 font generator
+frontend editor
+manual editor
 
 ** done **
 
 move sector optimisation to tilemap
+move canvas size to scripts
+merging tilemaps
+commandline argument for output
