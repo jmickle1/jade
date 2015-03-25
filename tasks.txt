@@ -20,6 +20,11 @@ intermission text generator
 
 ** big features **
 
+brush creator utility
+script preview utility
+generator preview utility -- draw an isometric map?
+frontend editor -- series of frontend utilities to make creating scripts/algorithms easier
+manual editor -- using jade as a map editor, not purely generated
 texturepack support (automatically grabs and imports textures from a wad)
 port compatability 
 extra zdoom features?
@@ -27,8 +32,6 @@ dehacked support
 stbar generator
 hudface generator
 font generator
-frontend editor
-manual editor
 r667/afterglow texture pack grabber
 r667 font grabber
 r667 bestiary grabber
