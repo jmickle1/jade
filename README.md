@@ -1,4 +1,4 @@
 # jade
 JMickle's Automatic Doom Editor
 
-Currently still in the prototyping/engine building stage, jade is intended to eventually generate levels for Doom using a modular and hackable system.
+JADE is a currently prototype-stage tool to generate doom levels with python scripts. The goal is to make it modular and hackable, so new generation algorithms can be created quickly and improved easily.
