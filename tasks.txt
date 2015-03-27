@@ -2,15 +2,21 @@
 
 ** in-progress tasks **
 
+join similar lines -- currently having trouble splitting lines on merge again.
+this is a nightmare. i'll get through it.
+
 ** improvements **
 
+add generation time to jade.py
 texture alignment
 fill out doom things table
+techbase script
 more scripts/script ideas
 more tools/tool ideas -- this will probably come off the back of the new scripts
 
 ** features **
 
+extra tile-to-sector write code types
 config file for settings
 linedef actions
 unit tests
@@ -38,7 +44,9 @@ r667 bestiary grabber
 
 ** done **
 
+move sector height to tile, from brush
 move sector optimisation to tilemap
 move canvas size to scripts
 merging tilemaps
 commandline argument for output
+move sector write code to tilemap

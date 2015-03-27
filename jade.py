@@ -12,7 +12,12 @@ print("")
 print("")
 print(sys.argv)
 if (len(sys.argv) < 2):
-	print("Usage: jade.py output_path [config_path]")
+	#print("Usage: jade.py output_path [config_path]")
+	til = scripts.cavey.run()
+	print("Generated")
+	output_path = "c:/users/jmickle/documents/cavey.wad"
+	output.to_file(til,output_path)
+	
 else:
 	output_path = sys.argv[1]
 	if (len(sys.argv) > 2): config_path = sys.argv[2]

@@ -1,6 +1,7 @@
 import random
 import toolbox.digger
 import brush
+import tile
 import omg.mapedit
 import thingplace
 from doomthings import *
@@ -8,11 +9,12 @@ from tilemap import *
 
 def run():
 	tilemap = Tilemap(80,60)
-	tilemap.set_tile_brush("A",brush.Brush(random_rock_flat(),random_rock_flat(),random_rock_texture(),random.choice([0,16,32,48]),random.choice([0,16,32,48])+96,random.choice([0,16,32,48])+128))
-	tilemap.set_tile_brush("B",brush.Brush(random_rock_flat(),random_rock_flat(),random_rock_texture(),random.choice([0,16,32,48]),random.choice([0,16,32,48])+96,random.choice([0,16,32,48])+128))
-	tilemap.set_tile_brush("C",brush.Brush(random_rock_flat(),random_rock_flat(),random_rock_texture(),random.choice([0,16,32,48]),random.choice([0,16,32,48])+96,random.choice([0,16,32,48])+128))
-	tilemap.set_tile_brush("D",brush.Brush(random_rock_flat(),random_rock_flat(),random_rock_texture(),random.choice([0,16,32,48]),random.choice([0,16,32,48])+96,random.choice([0,16,32,48])+128))
-	tilemap.set_tile_brush("E",brush.Brush(random_rock_flat(),random_rock_flat(),random_rock_texture(),random.choice([0,16,32,48]),random.choice([0,16,32,48])+96,random.choice([0,16,32,48])+128))
+	b = brush.Brush("FLAT1_1","FLAT1_1","BRICK1",176)
+	tilemap.set_tile_brush("A",tile.Tile(random.choice([0,16,32]),random.choice([0,16,32])+96,b))
+	tilemap.set_tile_brush("B",tile.Tile(random.choice([0,16,32]),random.choice([0,16,32])+96,b))
+	tilemap.set_tile_brush("C",tile.Tile(random.choice([0,16,32]),random.choice([0,16,32])+96,b))
+	tilemap.set_tile_brush("D",tile.Tile(random.choice([0,16,32]),random.choice([0,16,32])+96,b))
+	tilemap.set_tile_brush("E",tile.Tile(random.choice([0,16,32]),random.choice([0,16,32])+96,b))
 	toolbox.digger.dig(tilemap,"A",50,50,0,200,5)
 	toolbox.digger.dig(tilemap,"B",50,50,0,200,5)
 	toolbox.digger.dig(tilemap,"C",50,50,0,200,5)
