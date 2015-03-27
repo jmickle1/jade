@@ -23,9 +23,11 @@ unit tests
 mapinfo support
 multi-map support
 intermission text generator
+wad/texture tagging system
 
 ** big features **
 
+wad/texture tag creator
 brush creator utility
 script preview utility
 generator preview utility -- draw an isometric map?
