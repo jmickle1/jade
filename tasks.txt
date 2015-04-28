@@ -5,9 +5,10 @@ using cleared up lines messes up the texture replacements
 
 ** in-progress tasks **
 
+bronze base script
+
 ** improvements **
 
-techbase script
 more scripts/script ideas
 more tools/tool ideas -- this will probably come off the back of the new scripts
 texture alignment
