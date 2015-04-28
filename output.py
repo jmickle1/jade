@@ -6,6 +6,7 @@ import os
 import sys
 
 zdbsp_path = os.path.dirname(os.path.abspath(__file__)) + "/junk/zdbsp.exe"
+zennode_path = os.path.dirname(os.path.abspath(__file__)) + "/junk/ZenNode.exe"
 
 def to_image(tilemap):
 	data = tilemap.data
@@ -56,14 +57,17 @@ def to_map(tilemap):
 	
 	return map.to_lumps()
 	
-def to_file(tilemap,path):
+def to_file(tilemap,path,node_builder = "ZDBSP"):
 	wad = omg.WAD()
 	wad.maps["MAP01"] = to_map(tilemap)
 	wad.to_file(path)
-	print(path)
-	print(zdbsp_path)
-	subprocess.call([zdbsp_path,"-o"+path,path])
-	print("zdbsp done!")
+	if (node_builder == "ZDBSP"):
+		subprocess.call([zdbsp_path,"-o"+path,path])
+		print("zdbsp done!")
+	if (node_builder == "ZENNODE"):
+		subprocess.call([zennode_path,path])
+		print("ZenNode done!")
+	
 	
 	
 def to_print(tilemap):
