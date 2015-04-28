@@ -13,3 +13,12 @@ def add_to_tile_type(tilemap,tile,chance,things,angle=-1):
 					thing.medium = True
 					thing.hard = True
 					tilemap.things.append(thing)
+
+def place(tilemap,thing_id,x,y,angle=-1):
+	if (angle == -1):
+		angle = random.choice([0,90,180,270])
+	thing = omg.mapedit.Thing(x,y,angle,thing_id)
+	thing.easy = True
+	thing.medium = True
+	thing.hard = True
+	tilemap.things.append(thing)

@@ -88,8 +88,8 @@ class Tilemap(object):
 def cleanup_lines(sectors):
 	
 	def line_compare(l1,l2):
-		a1 = math.atan2(l1[3]-l1[1],l1[2]-l1[0])
-		a2 = math.atan2(l2[3]-l2[1],l2[2]-l2[0])
+		a1 = math.atan2(l1[2]-l1[0],l1[3]-l1[1])
+		a2 = math.atan2(l2[2]-l2[0],l2[3]-l2[1])
 		if (a1 == a2):
 			return True
 		return False
@@ -107,9 +107,10 @@ def cleanup_lines(sectors):
 				new_line[2] = s[i][2]
 				new_line[3] = s[i][3]
 				new_sector.append(new_line)
-				i+=1
 				new_line = [s[i][0],s[i][1],0,0]
-		new_sector.append(s[len(s)-1])
+				i+=1
+				
+		#new_sector.append(s[len(s)-1])
 		output.append(new_sector)
 	
 	return output

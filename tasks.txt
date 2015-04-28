@@ -1,18 +1,17 @@
 ** bugfixes **
 
-** in-progress tasks **
+using cleared up lines messes up the texture replacements
+- *HACK* detect/replace missing with neighbor textures
 
-join similar lines -- currently having trouble splitting lines on merge again.
-this is a nightmare. i'll get through it.
+** in-progress tasks **
 
 ** improvements **
 
-add generation time to jade.py
-texture alignment
-fill out doom things table
 techbase script
 more scripts/script ideas
 more tools/tool ideas -- this will probably come off the back of the new scripts
+texture alignment
+fill out doom things table
 
 ** features **
 
@@ -46,6 +45,9 @@ r667 bestiary grabber
 
 ** done **
 
+diagnostic.py
+add generation time to jade.py
+join similar lines
 move sector height to tile, from brush
 move sector optimisation to tilemap
 move canvas size to scripts
