@@ -76,3 +76,4 @@ def run():
 	thingplace.place(tilemap,PLAYER1,96,96)
 	print("Completed tilemap generation")
 	return tilemap
+	
