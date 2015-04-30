@@ -62,14 +62,16 @@ def run():
 		
 		
 		#exit
-		new_dir = random.choice([dir+1,dir,dir+3])
-		new_dir = new_dir%4
+		
 		room_index += 1
-		if (room_index < 5):
-			if (dir == 0): room(tilemap,x+width,y+height/2,new_dir,room_index)
-			if (dir == 1): room(tilemap,x+width/2,y,new_dir,room_index)
-			if (dir == 2): room(tilemap,x,y+height/2,new_dir,room_index)
-			if (dir == 3): room(tilemap,x+width/2,y+height,new_dir,room_index)
+		for i in range(0,random.choice([1,2])):
+			new_dir = random.choice([dir+1,dir,dir+3])
+			new_dir = new_dir%4
+			if (room_index < 5):
+				if (dir == 0): room(tilemap,x+width,y+height/2,new_dir,room_index)
+				if (dir == 1): room(tilemap,x+width/2,y,new_dir,room_index)
+				if (dir == 2): room(tilemap,x,y+height/2,new_dir,room_index)
+				if (dir == 3): room(tilemap,x+width/2,y+height,new_dir,room_index)
 
 	tilemap = Tilemap(100,100)
 	room(tilemap,50,50,0,room_index)

@@ -9,6 +9,8 @@ bronze base script
 
 ** improvements **
 
+replace string list with tile references
+rethink the way tiles/brushes work
 more scripts/script ideas
 more tools/tool ideas -- this will probably come off the back of the new scripts
 texture alignment
