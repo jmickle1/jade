@@ -1,15 +1,17 @@
 ** bugfixes **
 
+merging overlapping lines doesn't work 100% of the time. investigate. severe.
 using cleared up lines messes up the texture replacements
 - *HACK* detect/replace missing with neighbor textures
+using cleared up lines doesn't clear up the bottom left corner correctly??
+- more info: i think it's the first line of each sector
 
 ** in-progress tasks **
 
-bronze base script
+bronze base script -- V1
 
 ** improvements **
 
-replace string list with tile references
 rethink the way tiles/brushes work
 more scripts/script ideas
 more tools/tool ideas -- this will probably come off the back of the new scripts
@@ -18,14 +20,16 @@ fill out doom things table
 
 ** features **
 
+self contained .exe -- V1
 extra tile-to-sector write code types
 config file for settings
-linedef actions
+linedef actions -- V1
 unit tests
 mapinfo support
 multi-map support
 intermission text generator
 wad/texture tagging system
+define brushes in text file for ease of modding
 
 ** big features **
 
@@ -48,6 +52,8 @@ r667 bestiary grabber
 
 ** done **
 
+cleaned up sectors can now be declared in script
+replace string list with tile references
 diagnostic.py
 add generation time to jade.py
 join similar lines

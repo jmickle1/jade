@@ -6,57 +6,54 @@ class Tilemap(object):
 	def __init__(self, width, height):
 		self.width = width
 		self.height = height
-		self.data = [["" for y in range(height)] for x in range(width)]
-		self.tileinfo = omg.util.OrderedDict()
+		self.data = [[-1 for y in range(height)] for x in range(width)]
 		self.tileindex = []
 		self.things = []
+		self.CLEANUP = False
 	
 	def set_tile(self,x,y,tile):
 		try:
-			self.tileinfo[tile]
+			self.tileindex.index(tile)
 		except:
-			print("Tile "+tile+" has no Brush, creating default")
-			self.set_tile_brush(tile,brush.Brush())
+			#tile isn't added to the list
+			#this is an awful way to do it :~)
+			self.tileindex.append(tile)
 		if (x >= 0 and y >= 0 and x < self.width and y < self.height):
-			self.data[x][y] = tile
+			self.data[x][y] = self.tileindex.index(tile)
 	
 	def get_tile(self,x,y):
 		if (x >= 0 and y >= 0 and x < self.width and y < self.height):
 			return self.data[x][y]
 		else:
-			return ""
+			return -1
 		
 	def get_size(self):
 		return (self.width,self.height)
-	
-	def set_tile_brush(self,name,tile):
-		self.tileindex.append(name)
-		self.tileinfo[name] = tile
 		
 	def paste_tilemap(self, til, offset, paste_blanks = False):
 		for i in range(0,len(til.width)):
 			for j in range(0,len(til.height)):
-				if (til.get_tile(i,j) == ""):
+				if (til.get_tile(i,j) == -1):
 					if (paste_blanks):
 						self.set_tile(i,j,tile.get_tile(i,j))
 				else:
 					self.set_tile(i,j,tile.get_tile(i,j))
 					
-	def tile_to_sectors(self,name):
+	def tile_to_sectors(self,index):
 		sectors = []
 		lines = []
 		#lines are just xy pairs (x1,y1,x2,y2)
 		for i in range(0,self.width):
 			for j in range(0,self.height):
-				if (self.get_tile(i,j) == name):
+				if (self.get_tile(i,j) == index):
 					left = False
 					up = False
 					right = False
 					down = False
-					if (self.get_tile(i+1,j) == name): left = True
-					if (self.get_tile(i,j-1) == name): up = True
-					if (self.get_tile(i-1,j) == name): right = True
-					if (self.get_tile(i,j+1) == name): down = True
+					if (self.get_tile(i+1,j) == index): left = True
+					if (self.get_tile(i,j-1) == index): up = True
+					if (self.get_tile(i-1,j) == index): right = True
+					if (self.get_tile(i,j+1) == index): down = True
 					if (left == False): 
 						lines.append([32+i*32,32+j*32,32+i*32,j*32])
 					if (down == False): 
@@ -81,8 +78,9 @@ class Tilemap(object):
 		while (False in lines_checked):
 			sectors.append([])
 			find_connects(lines_checked.index(False))
-			
-		#return cleanup_lines(sectors)
+
+		if (self.CLEANUP == True):
+			return cleanup_lines(sectors)
 		return sectors
 		
 def cleanup_lines(sectors):
@@ -96,6 +94,7 @@ def cleanup_lines(sectors):
 	
 	output = []
 	
+	#redo this lol
 	for s in sectors:
 		new_sector = []
 		i = 0

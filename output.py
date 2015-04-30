@@ -20,7 +20,7 @@ def to_map(tilemap):
 	map = omg.mapedit.MapEditor()
 	#print("drawing sectors")
 	#draw all types of tile to seperate sectors
-	for t in tilemap.tileindex:
+	for t in range(0,len(tilemap.tileindex)):
 		sss = tilemap.tile_to_sectors(t)
 		
 		for s in sss:
@@ -30,11 +30,11 @@ def to_map(tilemap):
 				n = (l[2],l[3])
 				newsect.append(n)
 			
-			sec = tilemap.tileinfo[t].sector
-			sid = tilemap.tileinfo[t].brush.sidedef
+			sec = tilemap.tileindex[t].sector
+			sid = tilemap.tileindex[t].brush.sidedef
 			
 			map.draw_sector(newsect,sec,sid)
-			sys.stdout.write(str(sss.index(s)+1)+"/"+str(len(sss))+" "+str(tilemap.tileindex.index(t)+1)+"/"+str(len(tilemap.tileindex))+"\r")
+			sys.stdout.write(str(sss.index(s)+1)+"/"+str(len(sss))+" "+str(t+1)+"/"+str(len(tilemap.tileindex))+"\r")
 		
 	sys.stdout.write("\n")
 	
