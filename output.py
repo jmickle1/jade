@@ -54,7 +54,7 @@ def to_map(tilemap):
 			map.draw_sector(newsect,sec,sid)
 			
 			#progress indicator
-			sys.stdout.write(str(sss.index(s)+1)+"/"+str(len(sss))+" "+str(t+1)+"/"+str(len(tilemap.tileindex))+"\r")
+			sys.stdout.write(str(sss.index(s)+1)+"/"+str(len(sss))+" "+str(t+1)+"/"+str(len(tilemap.tileindex))+"  \r")
 		
 	sys.stdout.write("\n")
 	

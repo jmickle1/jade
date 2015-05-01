@@ -1,6 +1,5 @@
 ** bugfixes **
 
-merging overlapping lines doesn't work 100% of the time. investigate. severe.
 using cleared up lines messes up the texture replacements
 - *HACK* detect/replace missing with neighbor textures
 using cleared up lines doesn't clear up the bottom left corner correctly??
@@ -12,7 +11,7 @@ bronze base script -- V1
 
 ** improvements **
 
-rethink the way tiles/brushes work
+rethink the way tiles/brushes work -- maybe not necessary now
 more scripts/script ideas
 more tools/tool ideas -- this will probably come off the back of the new scripts
 texture alignment
@@ -52,6 +51,7 @@ r667 bestiary grabber
 
 ** done **
 
+merging overlapping lines doesn't work 100% of the time. IM PRETTY SURE I DID IT
 cleaned up sectors can now be declared in script
 replace string list with tile references
 diagnostic.py
