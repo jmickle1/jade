@@ -1,5 +1,9 @@
 ** bugfixes **
 
+EVERYTHING IS BROKEN TO DO WITH LINEDEF CALCULATION
+
+UNIT TEST EVERY FUCKING FUNCTION
+
 using cleared up lines messes up the texture replacements
 - *HACK* detect/replace missing with neighbor textures
 using cleared up lines doesn't clear up the bottom left corner correctly??

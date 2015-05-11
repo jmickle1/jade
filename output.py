@@ -39,7 +39,9 @@ def to_map(tilemap):
 			
 			#build a list of vertices to draw the sector with
 			newsect = []
-			newsect.append((s[0][0],s[0][1]))
+			#newsect.append((s[0][0],s[0][1]))
+			
+			#why am i reversing this
 			for l in reversed(s):
 				n = (l[2],l[3])
 				newsect.append(n)

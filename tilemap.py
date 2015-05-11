@@ -93,9 +93,7 @@ def cleanup_lines(sectors):
 		return False
 	
 	output = []
-	
-	#redo this lol
-	for s in sectors:
+	def clean_sector(sector):
 		new_sector = []
 		i = 0
 		new_line = [s[0][0],s[0][1],0,0]
@@ -108,9 +106,19 @@ def cleanup_lines(sectors):
 				new_sector.append(new_line)
 				new_line = [s[i][0],s[i][1],0,0]
 				i+=1
-				
-		#new_sector.append(s[len(s)-1])
-		output.append(new_sector)
+		
+		if (len(new_sector) < len(sector)):
+			hv = int(len(new_sector)/2)
+			new_sector_mod = []
+			for i in range(0, len(new_sector)):
+				new_sector_mod.append(new_sector[(i+hv) % len(new_sector)])
+			return clean_sector(new_sector_mod)
+		else:
+			return new_sector
 	
+	#redo this lol
+	for s in sectors:
+		output.append(clean_sector(s))
+		
 	return output
 	
