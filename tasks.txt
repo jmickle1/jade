@@ -6,8 +6,6 @@ UNIT TEST EVERY FUCKING FUNCTION
 
 using cleared up lines messes up the texture replacements
 - *HACK* detect/replace missing with neighbor textures
-using cleared up lines doesn't clear up the bottom left corner correctly??
-- more info: i think it's the first line of each sector
 
 ** in-progress tasks **
 
@@ -55,6 +53,7 @@ r667 bestiary grabber
 
 ** done **
 
+using cleared up lines doesn't clear up the bottom left corner correctly??
 merging overlapping lines doesn't work 100% of the time. IM PRETTY SURE I DID IT
 cleaned up sectors can now be declared in script
 replace string list with tile references
