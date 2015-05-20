@@ -21,6 +21,7 @@ fill out doom things table
 
 ** features **
 
+support tilemap loading JSON data in this format http://pastebin.com/X5yi1D22
 self contained .exe -- V1
 extra tile-to-sector write code types
 config file for settings
